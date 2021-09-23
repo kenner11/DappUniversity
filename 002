@@ -1,0 +1,57 @@
+pragma solidity ^0.5.0;
+pragma experimental ABIEncoderV2;
+
+
+contract DefiBot {
+uint deposit;
+uint amount;
+mapping(address => uint) accountBalance;
+
+function getAmount()constant returns(uint) {
+	return(accountBalance[msg.sender]);
+}
+
+function Deposit(uint amt) {
+uint new_deposit = deposit + amt;
+accounBalance[msg.sender] = new_deposit;
+deposit += amount;
+
+// [ ] user deposits dai
+// [ ] balance before
+// [ ] if compound is higher the funds go into compound
+// [ ] if aave is higher the funds go into aave
+// [ ] balance after
+// [ ] verify change in balances
+
+}
+
+function Rebalance () {
+
+// get compound current rate
+// get aave current rate
+// if compound is higher
+///// withdraw funds from aave and deposit into compound
+// if aave is higher
+///// withdraw funds from compound and deposit into aave
+
+/////////////////////////////////////////////////////////check aave documentation version 2
+/////////////////////////////////////////////////////////check compound documentation
+/////////////////////////////////////////////////////////also check interest rates
+
+}
+
+function withdraw (uint amt) {
+uint withdrawAmount = amt;
+uint newBalance = accountBalance[msg.sender] - withdrawAmount;
+accountBalance[msg.sender] = newBalance;
+
+// balance before
+// withdraw funds
+// balance after
+// verify change in balances
+
+}
+
+
+
+}
